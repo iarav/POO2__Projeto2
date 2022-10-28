@@ -10,6 +10,14 @@
 <project name="UIProjetoII" default="default" basedir=".">
     <description>Builds, tests, and runs the project UIProjetoII.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.0.8</version>
+        </dependency>   
+    </dependencies>
     <!--
 
     There exist several targets which are by default empty and which can be 
