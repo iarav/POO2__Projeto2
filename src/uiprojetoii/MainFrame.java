@@ -1,4 +1,6 @@
 package uiprojetoii;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -143,7 +145,8 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        //dia TODO add your handling code here:
+       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -152,6 +155,10 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        
+        Dialog dialog= new Dialog();
+        dialog.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void MF_StatusFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MF_StatusFieldActionPerformed
