@@ -1,6 +1,10 @@
 package uiprojetoii.view;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,8 +17,37 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
-
+    
+    public void setTextArea(String path) throws IOException {
+        
+        try{
+            BufferedReader buffRead = new BufferedReader(new FileReader(path));
+            String linha="";
+	while (true) {
+            if (linha != null) {
+		this.Mf_TxtArea.append(linha);
+                if(linha != "")
+                    this.Mf_TxtArea.append("\n");
+            } else
+                break;
+            linha = buffRead.readLine();
+	}
+	buffRead.close();
+        }catch(FileNotFoundException ex){
+            this.Mf_TxtArea.setText("Não foi possível encontrar o texto recuperado");
+        }
+    }
+    
+    public void setConnectionStatus(boolean status){
+        
+        if(status)
+            this.MF_StatusField.setText("Status de Conexão: Conectado");
+        else if(!status)
+            this.MF_StatusField.setText("Status de Conexão: Desconectado");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,7 +88,7 @@ public class MainFrame extends javax.swing.JFrame {
         MF_StatusField.setEditable(false);
         MF_StatusField.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         MF_StatusField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MF_StatusField.setText("Status da Conexão: ");
+        MF_StatusField.setText("Status da Conexão: Desconectado");
         MF_StatusField.setFocusable(false);
         MF_StatusField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,11 +225,11 @@ public class MainFrame extends javax.swing.JFrame {
         auth.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
+ 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -223,9 +256,17 @@ public class MainFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+                MainFrame mf = new MainFrame();
+                mf.setVisible(true);
+                try {
+                    mf.setTextArea("C:\\Users\\Cris\\Desktop\\roberto.txt");
+                    mf.setConnectionStatus(false);
+                } catch (IOException ex) {
+                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
