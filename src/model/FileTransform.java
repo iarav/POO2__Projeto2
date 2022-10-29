@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  * @author Brenda
@@ -26,11 +25,9 @@ public class FileTransform {
             
             writer.close();
             
-            JOptionPane.showMessageDialog(null, "O arquivo: " + filePath + " foi criado, verifique o diretorio definido",
-            "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Arquivo '" + filePath + "' criado com sucesso.");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "O programa não foi capaz de criar o arquivo.",
-            "Erro", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Erro na criação do arquivo.");
         }
     }
     
