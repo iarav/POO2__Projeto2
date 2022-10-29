@@ -1,4 +1,4 @@
-package uiprojetoii;
+package view;
 
 /**
  *

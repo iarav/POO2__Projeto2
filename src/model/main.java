@@ -19,6 +19,10 @@ public class main {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        }            
+        }
+        
+        TextDAO teste = new TextDAO();
+        
+        FileTransform.createTxt(teste.retrieve(1), "teste");
     }
 }
