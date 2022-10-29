@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @author Brenda
  */
 public abstract class abstractDAO {   
-    protected Connection connection = null;
+    private Connection connection = null;
     private String url;
     protected String user;
     protected String password;
