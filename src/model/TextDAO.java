@@ -28,13 +28,12 @@ public class TextDAO extends DAO {
         Text text = null;
         
         try {
-            if(res.next()){
+            if(res.next())
                 text = new Text(res.getInt("groupId"), res.getString("file"));
-                text.addContent(res.getInt("line"), res.getString("text"));
-            }
             
-            while(res.next())
-                text.addContent(res.getInt("line"), res.getString("text"));
+            do
+                text.addContent(res.getString("text"));
+            while(res.next());
             
         } catch (SQLException ex) {
             Logger.getLogger(TextDAO.class.getName()).log(Level.SEVERE, null, ex);

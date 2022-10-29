@@ -4,8 +4,7 @@
  */
 package model;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,12 +13,12 @@ import java.util.TreeMap;
 public class Text {
     private int groupId;
     private String file;
-    private TreeMap<Integer, String> content;
+    private ArrayList<String> content;
 
     public Text(int groupId, String file) {
         this.groupId = groupId;
         this.file = file;
-        content = new TreeMap();
+        content = new ArrayList();
     }
 
     public int getGroupId() {
@@ -41,15 +40,15 @@ public class Text {
     public String getContent(){
         String content = "";
         
-        for(Map.Entry<Integer, String> entry : this.content.entrySet()) {
-                content += entry.getValue();
+        for(int i=0; i < this.content.size(); i++) {
+                content += this.content.get(i);
             }
         
         return content;
     }
     
-    public void addContent(int line, String text){
-        this.content.put(line, text);
+    public void addContent(String text){
+        this.content.add(text);
     }
     
     @Override
