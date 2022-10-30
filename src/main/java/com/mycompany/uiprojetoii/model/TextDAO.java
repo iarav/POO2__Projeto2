@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 /**
  * @author Brenda
  * @author Yuri
+ * @version 1.0
  */
 public class TextDAO extends DAO {
     
@@ -24,6 +25,13 @@ public class TextDAO extends DAO {
         setConnection();
     }
     
+    /**
+     * Creates a Text instance through the result set of a query to a table of 
+     * text fragments.
+     * @see com.mycompany.model.Text Text
+     * @param res - Result Set
+     * @return Text object
+     */
     private Text createText(ResultSet res){
         Text text = null;
         
@@ -42,6 +50,12 @@ public class TextDAO extends DAO {
         return text;
     }
     
+    /**
+     * Retrieves a Text instance of a query based on the group id.
+     * @see com.mycompany.model.TextDAO#createText
+     * @param id - Group ID
+     * @return Text object
+     */
     public Text retrieve(int id){
         ResultSet res = getTextFromDB(""
                     + "SELECT * FROM textos "
@@ -53,6 +67,13 @@ public class TextDAO extends DAO {
         return text;
     } 
     
+    /**
+     * Retrieves an ArrayList of all instances of Text in the text fragments 
+     * table.
+     * @see com.mycompany.model.TextDAO#retrieve
+     * @param groupQty - Amount of groups
+     * @return ArrayList of Text instances
+     */
     public List retrieveAll(int groupQty){
         List<Text> texts = new ArrayList();
         
