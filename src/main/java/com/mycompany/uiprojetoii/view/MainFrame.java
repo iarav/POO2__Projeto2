@@ -3,14 +3,14 @@ import com.mycompany.uiprojetoii.control.Controller;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Main JFrame
+ * @author Iara
  * @author Baia
  */
 public class MainFrame extends javax.swing.JFrame {
@@ -23,27 +23,36 @@ public class MainFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+    /**
+     * This method set text inside a Text Area, obtaining it from a file
+     * @param path
+     * @throws java.io.IOException
+     */
     public void setTextArea(String path) throws IOException {
         
         try{
             BufferedReader buffRead = new BufferedReader(
                 new InputStreamReader(new FileInputStream(path + ".txt"), "UTF-8"));
             String linha="";
-	while (true) {
-            if (linha != null) {
-		this.Mf_TxtArea.append(linha);
-                if(linha != "")
-                    this.Mf_TxtArea.append("\n");
-            } else
-                break;
-            linha = buffRead.readLine();
-	}
-	buffRead.close();
+            while (true) {
+                if (linha != null) {
+                    this.Mf_TxtArea.append(linha);
+                    if(!linha.equals(""))
+                        this.Mf_TxtArea.append("\n");
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
         }catch(FileNotFoundException ex){
-            this.Mf_TxtArea.setText("Não foi possível encontrar o texto recuperado");
+            this.Mf_TxtArea.setText("Não foi possível encontrar o texto recuperado.\nSe você ainda não autenticou um Banco de dados, acesse Arquivo->Autenticar para isso!");
         }
     }
     
+    /**
+     * This method changes the status of database connection in the Main Frame
+     * @param status
+     */
     public void setConnectionStatus(boolean status){
         
         if(status)
@@ -214,11 +223,17 @@ public class MainFrame extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    /**
+     * This item from menu finalizes the db connection and closes the project
+     */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Controller.FinalizarConexaoLocal();
+        Controller.FinalizeLocalConnection();
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    /**
+     * This item from menu goes to Help Frame
+     */
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
@@ -240,6 +255,10 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    
+    /**
+     * This item from menu goes to Auth Frame
+     */
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         

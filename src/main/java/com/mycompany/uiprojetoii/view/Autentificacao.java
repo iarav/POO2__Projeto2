@@ -6,8 +6,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Baia
+ * JFrame for Authentication of database
+ * @author Iara
  */
 public class Autentificacao extends javax.swing.JFrame {
 
@@ -158,14 +158,23 @@ public class Autentificacao extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
+    /**
+     * This button goes from frame Autentificacao to Main Frame
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         MainFrame mainFrame = new MainFrame();
         mainFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
+    
+    /**
+     * This button takes the values from the user and password inputs and starts a connection with a local database, 
+     * already creating a txt file with the obtained text.
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             String user = jTextField1.getText();
@@ -174,8 +183,8 @@ public class Autentificacao extends javax.swing.JFrame {
             if(user.equals("")){
                 JOptionPane.showMessageDialog(null, "Preencha o campo de usuário!");
             }else{
-                Controller.CriarConexaoLocal(user,password);
-                Controller.CriarTxt(3, "Local");
+                Controller.CreateLocalConnection(user,password);
+                Controller.CreateTxtFile(3, "Local");
                 MainFrame mainFrame = new MainFrame();
                 mainFrame.setTextArea(Controller.CreateFileName(3,"Local"));
                 mainFrame.setConnectionStatus(Controller.verifyStatus());

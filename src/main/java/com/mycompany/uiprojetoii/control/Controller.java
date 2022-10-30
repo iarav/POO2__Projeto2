@@ -11,36 +11,64 @@ import java.sql.Connection;
  */
 
 /**
- *
- * @author iarav
+ * Controller class - makes connection between Model classes and View
+ * @author Iara
  */
 public class Controller {
     
-    public static void CriarConexaoLocal(String user, String password){
+    /**
+     * Creates the local database connection
+     * @param user
+     * @param password
+     */
+    public static void CreateLocalConnection(String user, String password){
         localConnectionDAO.setUrl();
-        localConnectionDAO.setUsuario(user);
-        localConnectionDAO.setSenha(password);
+        localConnectionDAO.setUsername(user);
+        localConnectionDAO.setPasswordDB(password);
         localConnectionDAO.setConnection();
     }
     
-    public static void FinalizarConexaoLocal(){
+    /**
+     * Ends the local database connection
+     */
+    public static void FinalizeLocalConnection(){
         localConnectionDAO db = new localConnectionDAO();
         db.endConnection();
     }
     
-    public static Text RecuperarTextoLocal(int id){
+    /**
+     * This retrieves a text from a specific group by id
+     * @param id
+     * @return 
+     */
+    public static Text RetrieveLocalText(int id){
         TextDAO teste = new TextDAO();
         return teste.retrieve(id);
     }
     
-    public static void CriarTxt(int id, String typeOfDB){
-        FileTransform.createTxt(RecuperarTextoLocal(id), CreateFileName(id,typeOfDB));
+    /**
+     * This creates a txt file using the groupId and the type of db (Local or Server)
+     * @param id
+     * @param typeOfDB
+     */
+    public static void CreateTxtFile(int id, String typeOfDB){
+        FileTransform.createTxt(RetrieveLocalText(id), CreateFileName(id,typeOfDB));
     }
     
+    /**
+     * This creates a String that is the name of the file, using the groupId and the type of db (Local or Server).
+     * @param id
+     * @param typeOfDB
+     * @return 
+     */
     public static String CreateFileName(int id, String typeOfDB){
         return "textoG" + String.valueOf(id) + typeOfDB;
     }
     
+    /**
+     * This verify the status of the database connection
+     * @return 
+     */
     public static boolean verifyStatus(){
         localConnectionDAO db = new localConnectionDAO();
         Connection con = db.getConnection();

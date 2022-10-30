@@ -18,11 +18,11 @@ public class localConnectionDAO extends abstractDAO {
         setURL("jdbc:mariadb://localhost:3307/poo");
     }
     
-    public static void setUsuario(String user) {
+    public static void setUsername(String user) {
         setUser(user);
     }
     
-    public static void setSenha(String password) {
+    public static void setPasswordDB(String password) {
         setPassword(password);
     }
     

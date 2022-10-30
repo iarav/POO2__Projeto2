@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Text {
     private int groupId;
     private String file;
-    private ArrayList<String> content;
+    private final ArrayList<String> content;
 
     /**
      * Default constructor of Text.
@@ -64,13 +64,13 @@ public class Text {
      * @return content the content to be returned (String)
      */
     public String getContent(){
-        String content = "";
+        String contentLine = "";
         
         for(int i=0; i < this.content.size(); i++) {
-                content += this.content.get(i) + "\n";
+                contentLine += this.content.get(i) + "\n";
             }
         
-        return content;
+        return contentLine;
     }
     
     /**
