@@ -1,10 +1,8 @@
 package com.mycompany.uiprojetoii.view;
 import com.mycompany.uiprojetoii.control.Controller;
-import com.mycompany.uiprojetoii.model.localConnectionDAO;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -177,14 +175,13 @@ public class Autentificacao extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Preencha o campo de usuário!");
             }else{
                 Controller.CriarConexaoLocal(user,password);
-                Controller.CriarTxt(Controller.RecuperarTextoLocal(3), "textoG3Local");
+                Controller.CriarTxt(3, "Local");
                 MainFrame mainFrame = new MainFrame();
-                mainFrame.setTextArea("textoG3Local");
+                mainFrame.setTextArea(Controller.CreateFileName(3,"Local"));
                 mainFrame.setConnectionStatus(Controller.verifyStatus());
                 mainFrame.setVisible(true);
                 this.setVisible(false);
-            }
-            
+            }            
         } catch (IOException ex) {
             Logger.getLogger(Autentificacao.class.getName()).log(Level.SEVERE, null, ex);
         }

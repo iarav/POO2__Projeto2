@@ -1,9 +1,11 @@
 package com.mycompany.uiprojetoii.view;
 import com.mycompany.uiprojetoii.control.Controller;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,7 +26,8 @@ public class MainFrame extends javax.swing.JFrame {
     public void setTextArea(String path) throws IOException {
         
         try{
-            BufferedReader buffRead = new BufferedReader(new FileReader(path + ".txt"));
+            BufferedReader buffRead = new BufferedReader(
+                new InputStreamReader(new FileInputStream(path + ".txt"), "UTF-8"));
             String linha="";
 	while (true) {
             if (linha != null) {

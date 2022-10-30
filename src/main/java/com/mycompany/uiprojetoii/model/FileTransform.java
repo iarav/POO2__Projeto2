@@ -19,7 +19,7 @@ public class FileTransform {
     
     public static void createTxt(Text text, String filePath) {
         try (BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(new FileOutputStream(filePath + ".txt"), StandardCharsets.ISO_8859_1))){
+                    new OutputStreamWriter(new FileOutputStream(filePath + ".txt"),"UTF-8"))){
                       
             writer.write(text.getContent());
             

@@ -33,8 +33,12 @@ public class Controller {
         return teste.retrieve(id);
     }
     
-    public static void CriarTxt(Text text, String filePath){
-        FileTransform.createTxt(text, filePath);
+    public static void CriarTxt(int id, String typeOfDB){
+        FileTransform.createTxt(RecuperarTextoLocal(id), CreateFileName(id,typeOfDB));
+    }
+    
+    public static String CreateFileName(int id, String typeOfDB){
+        return "textoG" + String.valueOf(id) + typeOfDB;
     }
     
     public static boolean verifyStatus(){
@@ -42,5 +46,4 @@ public class Controller {
         Connection con = db.getConnection();
         return con != null;
     }
-    
 }
