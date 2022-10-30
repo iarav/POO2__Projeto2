@@ -12,17 +12,19 @@ import java.util.logging.Logger;
  * @author Brenda
  */
 public abstract class DAO {   
-    protected Connection connection = null;
-    private String url;
-    protected String user;
-    protected String password;
+    private static Connection connection = null;
+    private static String url;
+    protected static String user;
+    protected static String password;
     
-    public void setConnection() {               
-        try {           
-            connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexão estabelecida com sucesso! \n");
-         } catch (SQLException ex) {
-            System.out.println("Erro ao acessar o banco: " + ex.getMessage());
+    public static void setConnection() {               
+        if(connection==null){
+            try {           
+                connection = DriverManager.getConnection(url, user, password);
+                System.out.println("Conexão estabelecida com sucesso! \n");
+             } catch (SQLException ex) {
+                System.out.println("Erro ao acessar o banco: " + ex.getMessage());
+            }
         }
     }
 
@@ -44,8 +46,16 @@ public abstract class DAO {
         }
     }
     
-    public void setURL(String url) {
-        this.url = url;
+    public static void setURL(String u) {
+        url = u;
+    }
+    
+    public static void setUser(String u) {
+        user = u;
+    }
+    
+    public static void setPassword(String p) {
+        password = p;
     }
     
     public Connection getConnection() {

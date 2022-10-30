@@ -4,9 +4,7 @@ import com.mycompany.uiprojetoii.model.FileTransform;
 import com.mycompany.uiprojetoii.model.Text;
 import com.mycompany.uiprojetoii.model.TextDAO;
 import com.mycompany.uiprojetoii.model.localConnectionDAO;
-import com.mycompany.uiprojetoii.view.MainFrame;
-import java.io.IOException;
-
+import java.sql.Connection;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -18,9 +16,16 @@ import java.io.IOException;
  */
 public class Controller {
     
-    public static void CriarConexaoLocal(){
+    public static void CriarConexaoLocal(String user, String password){
+        localConnectionDAO.setUrl();
+        localConnectionDAO.setUsuario(user);
+        localConnectionDAO.setSenha(password);
+        localConnectionDAO.setConnection();
+    }
+    
+    public static void FinalizarConexaoLocal(){
         localConnectionDAO db = new localConnectionDAO();
-        db.setConnection();
+        db.endConnection();
     }
     
     public static Text RecuperarTextoLocal(int id){
@@ -30,6 +35,12 @@ public class Controller {
     
     public static void CriarTxt(Text text, String filePath){
         FileTransform.createTxt(text, filePath);
+    }
+    
+    public static boolean verifyStatus(){
+        localConnectionDAO db = new localConnectionDAO();
+        Connection con = db.getConnection();
+        return con != null;
     }
     
 }

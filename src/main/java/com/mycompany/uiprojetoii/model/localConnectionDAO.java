@@ -11,11 +11,19 @@ import java.util.logging.Logger;
  */
 public class localConnectionDAO extends abstractDAO {
     
-    public localConnectionDAO() {
+    public localConnectionDAO() { 
+    }
+    
+    public static void setUrl() {
         setURL("jdbc:mariadb://localhost:3307/poo");
-        user = "root";
-        password = "";
-        setConnection();
+    }
+    
+    public static void setUsuario(String user) {
+        setUser(user);
+    }
+    
+    public static void setSenha(String password) {
+        setPassword(password);
     }
     
     @Override
