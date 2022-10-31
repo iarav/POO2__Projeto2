@@ -53,7 +53,7 @@ public class Sobre extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Desenvolvido por");
+        jLabel1.setText( "Desenvolvido por");
 
         jLabel2.setIcon(new ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/uiprojetoii/view/Images/162267680_124875516310437_370215560339289552_n.jpg")).getImage().getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH)));
 

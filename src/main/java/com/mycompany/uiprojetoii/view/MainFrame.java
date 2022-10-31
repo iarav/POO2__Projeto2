@@ -220,7 +220,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //dia TODO add your handling code here:
-       
+       Sobre sobre= new Sobre();
+       sobre.setVisible(true);
+               
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
