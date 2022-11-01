@@ -222,7 +222,7 @@ public class MainFrame extends javax.swing.JFrame {
         //dia TODO add your handling code here:
        Sobre sobre= new Sobre();
        sobre.setVisible(true);
-               
+       this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
