@@ -236,7 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
-        Ajuda ajuda= new Ajuda();
+        Help ajuda= new Help();
         ajuda.setVisible(true);
         this.setVisible(false);
         
@@ -261,7 +261,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         
-        Autentificacao auth = new Autentificacao();
+        Authentication auth = new Authentication();
         auth.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
