@@ -16,11 +16,11 @@ import java.util.List;
  */
 public class FileTransform {
     
-    public static void createTxt(Text text, String filePath) {
+    public static void createTxt(String text, String filePath) {
         try (BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(filePath + ".txt"),"UTF-8"))){
                       
-            writer.write(text.getContent());
+            writer.write(text);
             
             writer.close();
             

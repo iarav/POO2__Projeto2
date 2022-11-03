@@ -183,11 +183,10 @@ public class Autentificacao extends javax.swing.JFrame {
             if(user.equals("")){
                 JOptionPane.showMessageDialog(null, "Preencha o campo de usuário!");
             }else{
-                Controller.CreateLocalConnection(user,password);
-                Controller.CreateTxtFile(3, "Local");
                 MainFrame mainFrame = new MainFrame();
+                mainFrame.setConnectionStatus(Controller.getLocalData(user, password, 3));
                 mainFrame.setTextArea(Controller.CreateFileName(3,"Local"));
-                mainFrame.setConnectionStatus(Controller.verifyStatus());
+                
                 mainFrame.setVisible(true);
                 this.setVisible(false);
             }            
@@ -197,7 +196,23 @@ public class Autentificacao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String user = jTextField1.getText();
+            String password = jTextField2.getText();
+            
+            if(user.equals("")){
+                JOptionPane.showMessageDialog(null, "Preencha o campo de usuário!");
+            }else{
+                MainFrame mainFrame = new MainFrame();
+                mainFrame.setConnectionStatus(Controller.getLocalData(user, password, 3));
+                mainFrame.setTextArea(Controller.CreateFileName(3,"Remote"));
+                
+                mainFrame.setVisible(true);
+                this.setVisible(false);
+            }            
+        } catch (IOException ex) {
+            Logger.getLogger(Autentificacao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

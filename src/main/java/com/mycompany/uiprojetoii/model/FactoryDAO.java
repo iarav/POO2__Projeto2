@@ -16,7 +16,7 @@ public class FactoryDAO {
      * @param pass
      * @return
     */
-    public DAO getDAO(Boolean isLocal, String user, String pass) {
+    public static DAO getDAO(Boolean isLocal, String user, String pass) {
         if(isLocal)
             return new LocalConnDAO(user, pass);
         else
