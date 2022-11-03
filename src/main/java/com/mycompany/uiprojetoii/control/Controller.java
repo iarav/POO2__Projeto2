@@ -1,9 +1,10 @@
 package com.mycompany.uiprojetoii.control;
 
+import com.mycompany.uiprojetoii.model.DAO;
 import com.mycompany.uiprojetoii.model.FileTransform;
 import com.mycompany.uiprojetoii.model.Text;
 import com.mycompany.uiprojetoii.model.TextDAO;
-import com.mycompany.uiprojetoii.model.localConnectionDAO;
+import com.mycompany.uiprojetoii.model.LocalConnDAO;
 import java.sql.Connection;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -15,6 +16,7 @@ import java.sql.Connection;
  * @author Iara
  */
 public class Controller {
+    private static DAO db;
     
     /**
      * Creates the local database connection
@@ -22,17 +24,13 @@ public class Controller {
      * @param password
      */
     public static void CreateLocalConnection(String user, String password){
-        localConnectionDAO.setUrl();
-        localConnectionDAO.setUsername(user);
-        localConnectionDAO.setPasswordDB(password);
-        localConnectionDAO.setConnection();
+        db = new LocalConnDAO(user, password);
     }
     
     /**
      * Ends the local database connection
      */
     public static void FinalizeLocalConnection(){
-        localConnectionDAO db = new localConnectionDAO();
         db.endConnection();
     }
     
@@ -70,7 +68,7 @@ public class Controller {
      * @return 
      */
     public static boolean verifyStatus(){
-        localConnectionDAO db = new localConnectionDAO();
+        LocalConnDAO db = new LocalConnDAO();
         Connection con = db.getConnection();
         return con != null;
     }

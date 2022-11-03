@@ -9,8 +9,11 @@ import java.sql.SQLException;
  */
 public class main {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
-        localConnectionDAO db = new localConnectionDAO();
+        LocalConnDAO db = new LocalConnDAO("root", "");
         ResultSet text = db.getTextFromDB(1);
         
         try {
@@ -21,7 +24,7 @@ public class main {
             System.out.println(e.getMessage());
         }
         
-        TextDAO teste = new TextDAO();
+        TextDAO teste = new TextDAO("","");
         
         FileTransform.createTxt(teste.retrieve(1), "teste");
     }

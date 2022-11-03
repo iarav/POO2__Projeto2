@@ -8,18 +8,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 
+ *
  * @author Brenda
  */
-public abstract class DAO {   
+public abstract class DAO {  
     private static Connection connection = null;
     private static String url;
     protected static String user;
     protected static String password;
-    
-    public static void setConnection() {               
+   
+    public static void setConnection() {              
         if(connection==null){
-            try {           
+            try {          
                 connection = DriverManager.getConnection(url, user, password);
                 System.out.println("Conexão estabelecida com sucesso! \n");
              } catch (SQLException ex) {
@@ -28,7 +28,7 @@ public abstract class DAO {
         }
     }
 
-    public ResultSet getTextFromDB(String query) {
+    public ResultSet getFromDB(String query) {
         ResultSet res = null;
         try {
             res = getConnection().createStatement().executeQuery(query);
@@ -37,7 +37,9 @@ public abstract class DAO {
         }
         return res;
     }
-    
+   
+    public abstract ResultSet getTextFromDB(int id);
+   
     public void endConnection() {
         try {
             connection.close();
@@ -45,19 +47,19 @@ public abstract class DAO {
             System.out.println("Erro ao finalizar conexão com o banco: " + ex.getMessage());
         }
     }
-    
+   
     public static void setURL(String u) {
         url = u;
     }
-    
+   
     public static void setUser(String u) {
         user = u;
     }
-    
+   
     public static void setPassword(String p) {
         password = p;
     }
-    
+   
     public Connection getConnection() {
         return connection;
     }
