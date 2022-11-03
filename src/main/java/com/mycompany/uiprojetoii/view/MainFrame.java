@@ -299,7 +299,7 @@ public class MainFrame extends javax.swing.JFrame {
                 MainFrame mf = new MainFrame();
                 mf.setVisible(true);
                 try {
-                    mf.setTextArea("C:\\Users\\Cris\\Desktop\\roberto.txt");
+                    mf.setTextArea("");
                     mf.setConnectionStatus(false);
                 } catch (IOException ex) {
                     Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
