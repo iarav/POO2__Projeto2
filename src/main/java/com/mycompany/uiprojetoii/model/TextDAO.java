@@ -51,12 +51,10 @@ public class TextDAO extends DAO {
     }
    
     /**
-     * Retrieves a Text instance of a query based on the group id.
-     * @see com.mycompany.model.TextDAO#createText
+     * Gets a Result Set from a query based on the group id.
      * @param id - Group ID
-     * @return Text object
+     * @return ResultSet
      */
-   
     @Override
     public ResultSet getTextFromDB(int id) {
         ResultSet res = getFromDB(""
@@ -66,6 +64,12 @@ public class TextDAO extends DAO {
         return res;
     }
    
+    /**
+     * Retrieves a Text instance of a query based on the group id.
+     * @see com.mycompany.model.TextDAO#createText
+     * @param id - Group ID
+     * @return Text object
+     */
     public Text retrieve(int id){
         ResultSet res = getTextFromDB(id);
        

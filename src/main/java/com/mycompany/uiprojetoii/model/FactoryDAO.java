@@ -11,10 +11,11 @@ package com.mycompany.uiprojetoii.model;
  */
 public class FactoryDAO {
     /**
+     * Returns a DAO object.
      * @param isLocal
      * @param user
      * @param pass
-     * @return
+     * @return DAO object.
     */
     public static DAO getDAO(Boolean isLocal, String user, String pass) {
         if(isLocal)
