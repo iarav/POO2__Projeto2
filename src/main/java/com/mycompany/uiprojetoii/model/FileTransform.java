@@ -11,11 +11,17 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 /**
+ * Class to create the file with the text
  * @author Brenda
  * @author Yuri
  */
 public class FileTransform {
     
+    /**
+    * Creates a .txt file with the text
+    * @param text the text to be writed
+    * @param filePath path file
+    */
     public static void createTxt(String text, String filePath) {
         try (BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(new FileOutputStream(filePath + ".txt"),"UTF-8"))){
@@ -30,6 +36,10 @@ public class FileTransform {
         }
     }
     
+    /**
+    * Creates a .pdf file with the text
+    * @param texts list with the text to be writed
+    */
     public static void createPdf(List<Text> texts){
         
     }

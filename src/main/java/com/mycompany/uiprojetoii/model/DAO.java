@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Abstract class to conect with a DB
  * @author Brenda
  */
 public abstract class DAO {  
@@ -17,6 +17,9 @@ public abstract class DAO {
     protected static String user;
     protected static String password;
    
+    /**
+     * Sets the connection with the DB
+     */
     public static void setConnection() {              
         if(connection==null){
             try {          
@@ -28,6 +31,11 @@ public abstract class DAO {
         }
     }
 
+    /**
+    * Execute a query 
+    * @param query string with the query to be executed
+    * @return ResultSet with the results
+    */
     public ResultSet getFromDB(String query) {
         ResultSet res = null;
         try {
@@ -38,8 +46,16 @@ public abstract class DAO {
         return res;
     }
    
+    /**
+    * Abstract method to be overrided
+    * @param id integer with the group id 
+    * @return ResultSet with the results
+    */
     public abstract ResultSet getTextFromDB(int id);
    
+    /**
+    * Closes the connection with the DB
+    */
     public void endConnection() {
         try {
             connection.close();
@@ -48,18 +64,34 @@ public abstract class DAO {
         }
     }
    
+    /**
+     * Sets the DB url.
+     * @param u string with the url
+     */
     public static void setURL(String u) {
         url = u;
     }
    
+    /**
+     * Sets the user.
+     * @param u string with the user
+     */
     public static void setUser(String u) {
         user = u;
     }
    
+    /**
+     * Sets the password.
+     * @param p string with the password
+     */
     public static void setPassword(String p) {
         password = p;
     }
    
+    /**
+     * Gets the connection.
+     * @return connection 
+     */
     public Connection getConnection() {
         return connection;
     }

@@ -12,9 +12,9 @@ package com.mycompany.uiprojetoii.model;
 public class FactoryDAO {
     /**
      * Returns a DAO object.
-     * @param isLocal
-     * @param user
-     * @param pass
+     * @param isLocal boolean that indicates if is a local connection
+     * @param user string with the user 
+     * @param pass string with the password
      * @return DAO object.
     */
     public static DAO getDAO(Boolean isLocal, String user, String pass) {
