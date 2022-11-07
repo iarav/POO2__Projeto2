@@ -36,12 +36,13 @@ public class Help extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,24 +63,16 @@ public class Help extends javax.swing.JFrame {
         jLabel1.setFocusCycleRoot(true);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setText("O presente programa tem como função principal retornar um texto de");
+        jLabel2.setText("O presente programa tem como função principal retornar um texto de um banco de dados,");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Como Utilizar");
 
         jLabel5.setText("Autentique-se através do menu: Arquivo>Autenticar");
 
-        jLabel6.setText("Após autenticado solicite o texto desejado através do menu: Texto>Recuperar Grupo");
-
-        jLabel7.setText("Aguarde o carregamento do programa");
-
-        jLabel8.setText("Uma vez que o programa terminar o carregamento visualize o seu texto");
-
-        jLabel9.setText("Uma vez que o programa terminar o carregamento visualize o seu texto");
+        jLabel6.setText("No menu, você poderá selecionar qual BD será feita a conexão através dos botões.");
 
         jLabel10.setText("Se preferir faça download através do botão Download");
-
-        jLabel11.setText("Você pode recuperar somente o texto do grupo ou todos os textos");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("<--");
@@ -88,6 +81,16 @@ public class Help extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jLabel12.setText("sendo ele de um servidor ou local.");
+
+        jLabel13.setText("Na conexão local, a porta é: 3307 e o nome do banco de dados é: poo.");
+
+        jLabel14.setText("Depois de clicar para fazer a conexão, seu texto será recuperado e apresentado na tela para você!");
+
+        jLabel15.setText("Você também pode acessar as telas de Sobre em Ajuda>Sobre.");
+
+        jLabel16.setText("Se quiser finalizar a conexão e sair, clique em Sair em Arquivo>Sair.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,12 +112,13 @@ public class Help extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))))
-                .addContainerGap(228, Short.MAX_VALUE))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,23 +129,25 @@ public class Help extends javax.swing.JFrame {
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(32, 32, 32)
-                .addComponent(jLabel11)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel7)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel8)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel9)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel15)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel16)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,6 +156,7 @@ public class Help extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         MainFrame mainFrame = new MainFrame();
+        mainFrame.setConnectionStatus(Controller.verifyStatus()); //chages Main Frame status of db connection
         mainFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -159,14 +166,15 @@ public class Help extends javax.swing.JFrame {
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
