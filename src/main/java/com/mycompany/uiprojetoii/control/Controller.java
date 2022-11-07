@@ -41,10 +41,13 @@ public class Controller {
         return status;
     }
     
+<<<<<<< HEAD
     /**
      * gets the connection status from the DB
      * @return status of connection
      */
+=======
+>>>>>>> e89a00374b340a2f1b722f75e6659523802019ee
     public static Boolean verifyStatus(){
         
         Boolean status = DAO.getConnection() != null;
