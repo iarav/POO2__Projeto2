@@ -1,5 +1,6 @@
 package com.mycompany.uiprojetoii.control;
 
+import com.mycompany.uiprojetoii.model.DAO;
 import com.mycompany.uiprojetoii.model.FactoryDAO;
 import com.mycompany.uiprojetoii.model.FileTransform;
 import com.mycompany.uiprojetoii.model.TextDAO;
@@ -33,11 +34,20 @@ public class Controller {
     public static Boolean getLocalData(String user, String password, int id){
         LocalConnDAO db = (LocalConnDAO) FactoryDAO.getDAO(true, user, password);
         
-        Boolean status = db.getConnection() != null;
+        Boolean status = LocalConnDAO.getConnection() != null;
         
         FileTransform.createTxt(db.retrieveData(id), CreateFileName(id,"Local"));
         
-        db.endConnection();
+        return status;
+    }
+    
+    /**
+     * gets the connection status from the DB
+     * @return status of connection
+     */
+    public static Boolean verifyStatus(){
+        
+        Boolean status = DAO.getConnection() != null;
         
         return status;
     }

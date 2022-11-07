@@ -92,7 +92,7 @@ public abstract class DAO {
      * Gets the connection.
      * @return connection 
      */
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 }
