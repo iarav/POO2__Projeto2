@@ -204,8 +204,8 @@ public class Authentication extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Preencha o campo de usuário!");
             }else{
                 MainFrame mainFrame = new MainFrame();
-                mainFrame.setConnectionStatus(Controller.getLocalData(user, password, 3));
-                mainFrame.setTextArea(Controller.CreateFileName(3,"Remote"));
+                mainFrame.setConnectionStatus(Controller.getGroupText(user, password, 3));
+                mainFrame.setTextArea(Controller.CreateFileName(3,"Server"));
                 
                 mainFrame.setVisible(true);
                 this.setVisible(false);

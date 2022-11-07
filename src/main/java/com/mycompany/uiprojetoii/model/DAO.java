@@ -56,7 +56,7 @@ public abstract class DAO {
     /**
     * Closes the connection with the DB
     */
-    public void endConnection() {
+    public static void endConnection() {
         try {
             connection.close();
         } catch (SQLException ex) {

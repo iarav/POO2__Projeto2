@@ -66,23 +66,20 @@ public class Controller {
         
         FileTransform.createTxt(db.retrieve(id).getContent(), CreateFileName(id,"Server"));
         
-        db.endConnection();
-        
         return status;
     }
     
     /**
      * Creates a PDF file containing all the texts in the database.
-     * @param user
-     * @param password
      * @param groupQty amount of groups
      */
-    public static void downloadPdf(String user, String password, int groupQty){
-        TextDAO db = (TextDAO) FactoryDAO.getDAO(false, user, password);
+    public static void downloadPdf(int groupQty){
+        TextDAO db = (TextDAO) FactoryDAO.getDAO(false);
         
-        FileTransform.createPdf(db.retrieveAll(groupQty));
-        
-        db.endConnection();
+        FileTransform.createPdf(db.retrieveAll(groupQty),"Texts");
     }
     
+    public static void endCon(){
+        DAO.endConnection();
+    }
 }

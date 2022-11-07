@@ -22,6 +22,9 @@ public class LocalConnDAO extends DAO {
         setPassword(password);
         setConnection();
     }
+    
+    public LocalConnDAO() {
+    }
    
     /**
     * Gets the texts from the local DB

@@ -24,6 +24,9 @@ public class TextDAO extends DAO {
         setPassword(password);
         setConnection();
     }
+    
+    public TextDAO(){
+    }
    
     /**
      * Creates a Text instance through the result set of a query to a table of

@@ -23,4 +23,11 @@ public class FactoryDAO {
         else
             return new TextDAO(user, pass);
     }
+    
+    public static DAO getDAO(Boolean isLocal) {
+        if(isLocal)
+            return new LocalConnDAO();
+        else
+            return new TextDAO();
+    }
 }
