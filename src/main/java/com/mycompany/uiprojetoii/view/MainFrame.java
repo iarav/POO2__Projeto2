@@ -1,5 +1,6 @@
 package com.mycompany.uiprojetoii.view;
 import com.mycompany.uiprojetoii.control.Controller;
+import com.mycompany.uiprojetoii.model.DAO;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -215,6 +216,7 @@ public class MainFrame extends javax.swing.JFrame {
      * This item from menu finalizes the db connection and closes the project
      */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Controller.endCon();
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 

@@ -80,6 +80,9 @@ public class Controller {
     }
     
     public static void endCon(){
-        DAO.endConnection();
+        if(verifyStatus()){
+            DAO.endConnection();
+            System.out.println("Conexão com o banco finalizada com sucesso!");
+        }
     }
 }
