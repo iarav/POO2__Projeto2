@@ -1,0 +1,64 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/iarav/.m2/repository/org/mariadb/jdbc/mariadb-java-client/3.0.8/mariadb-java-client-3.0.8.jar;C:/Users/iarav/.m2/repository/com/itextpdf/itextpdf/5.5.10/itextpdf-5.5.10.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'18'
+-sourcepath
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'UIProjetoII 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'UIProjetoII 1.0-SNAPSHOT API'
+com.mycompany.uiprojetoii.control
+com.mycompany.uiprojetoii.model
+com.mycompany.uiprojetoii.view
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/control/Controller.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/DAO.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/FactoryDAO.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/FileTransform.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/LocalConnDAO.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/Text.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/model/TextDAO.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/view/About.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/view/Authentication.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/view/Help.java'
+'E:/0_Unicamp/4Semestre/POO2/Projeto 2/POO2__Projeto2/src/main/java/com/mycompany/uiprojetoii/view/MainFrame.java'
+C:\Users\iarav\.m2\repository\org\mariadb\jdbc\mariadb-java-client\3.0.8\mariadb-java-client-3.0.8.jar = 1667099223550
+C:\Users\iarav\.m2\repository\com\itextpdf\itextpdf\5.5.10\itextpdf-5.5.10.jar = 1667848359853
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\src\main\java = 1667259561866
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\allclasses-index.html = 1667915755908
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\allpackages-index.html = 1667915755921
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\copy.svg = 1667915756127
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\element-list = 1667915754459
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\help-doc.html = 1667915756088
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\index-all.html = 1667915756055
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\index.html = 1667915755837
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\javadoc.bat = 1667915546037
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\jquery-ui.overrides.css = 1667915756337
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\member-search-index.js = 1667915755936
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\module-search-index.js = 1667915755924
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\overview-summary.html = 1667915756061
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\overview-tree.html = 1667915755826
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\package-search-index.js = 1667915755928
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\script.js = 1667915756123
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\search.js = 1667915756141
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\serialized-form.html = 1667915755446
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\stylesheet.css = 1667915756117
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\tag-search-index.js = 1667915755943
+E:\0_Unicamp\4Semestre\POO2\Projeto 2\POO2__Projeto2\target\site\apidocs\type-search-index.js = 1667915755930

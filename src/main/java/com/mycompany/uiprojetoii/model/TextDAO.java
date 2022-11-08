@@ -77,7 +77,6 @@ public class TextDAO extends DAO {
    
     /**
      * Retrieves a Text instance of a query based on the group id.
-     * @see com.mycompany.model.TextDAO#createText
      * @param id - Group ID
      * @return Text object
      */
@@ -92,7 +91,6 @@ public class TextDAO extends DAO {
     /**
      * Retrieves an ArrayList of all instances of Text in the text fragments
      * table.
-     * @see com.mycompany.model.TextDAO#retrieve
      * @param groupQty - Amount of groups
      * @return ArrayList of Text instances
      */
