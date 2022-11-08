@@ -75,12 +75,15 @@ public class Text {
     
     /**
      * Adds a new line of text in the Text ArrayList (content).
-     * @param text 
+     * @param text text content
      */
     public void addContent(String text){
         this.content.add(text);
     }
     
+    /**
+     * To string method
+     */
     @Override
     public String toString() {
         return "Text{" + "groupId=" + groupId + ", file=" + file + ", content=" + content + '}';

@@ -16,8 +16,8 @@ public class Controller {
     
     /**
      * Creates a String that is the name of the file, using the groupId and the type of db (Local or Server).
-     * @param id
-     * @param typeOfDB
+     * @param id id of group
+     * @param typeOfDB type of DB
      * @return file name
      */
     public static String CreateFileName(int id, String typeOfDB){
@@ -54,8 +54,8 @@ public class Controller {
     
     /**
      * Gets the text from a specific group id.
-     * @param user
-     * @param password
+     * @param user username
+     * @param password password
      * @param id group id
      * @return status of connection
      */
@@ -79,6 +79,10 @@ public class Controller {
         FileTransform.createPdf(db.retrieveAll(groupQty),"Texts");
     }
     
+    
+    /**s
+     * End the connection with the Database
+     */
     public static void endCon(){
         if(verifyStatus()){
             DAO.endConnection();

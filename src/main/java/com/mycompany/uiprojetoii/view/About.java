@@ -8,7 +8,7 @@ import com.mycompany.uiprojetoii.control.Controller;
 import javax.swing.ImageIcon;
 
 /**
- *
+ *Frame About
  * @author Heloisie
  */
 public class About extends javax.swing.JFrame {
@@ -227,6 +227,7 @@ public class About extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
+     * main
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -26,8 +26,8 @@ public class MainFrame extends javax.swing.JFrame {
     
     /**
      * This method set text inside a Text Area, obtaining it from a file
-     * @param path
-     * @throws java.io.IOException
+     * @param path path of the file
+     * @throws java.io.IOException execption
      */
     public void setTextArea(String path) throws IOException {
         
@@ -52,7 +52,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     /**
      * This method changes the status of database connection in the Main Frame
-     * @param status
+     * @param status status of db
      */
     public void setConnectionStatus(boolean status){
         
@@ -254,7 +254,9 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
  
     /**
+     * main method
      * @param args the command line arguments
+     * @throws java.io.IOException exception
      */
     public static void main(String args[]) throws IOException {
         /* Set the Nimbus look and feel */

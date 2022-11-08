@@ -23,7 +23,6 @@ import javax.swing.JOptionPane;
 
 /**
  * Class to create the file with the text
- *
  * @author Brenda
  * @author Yuri
  * @author Heloisie
@@ -55,7 +54,7 @@ public class FileTransform {
      * Creates a .pdf file with the text
      *
      * @param texts list with the text to be writed
-     * @param filePath
+     * @param filePath filepath
      */
     public static void createPdf(List<Text> texts, String filePath) {
         try {

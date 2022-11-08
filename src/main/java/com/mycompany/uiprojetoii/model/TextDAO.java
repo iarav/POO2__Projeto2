@@ -12,12 +12,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Text DAO Class
  * @author Brenda
  * @author Yuri
  * @version 1.0
  */
 public class TextDAO extends DAO {
    
+    /**
+     * Constructor
+     * @param user username
+     * @param password password
+     */
     public TextDAO(String user, String password){
         setURL("jdbc:mariadb://143.106.243.64:3306/SI400");
         setUser(user);
@@ -25,13 +31,15 @@ public class TextDAO extends DAO {
         setConnection();
     }
     
+    /**
+     * Empty constructor
+     */
     public TextDAO(){
     }
    
     /**
      * Creates a Text instance through the result set of a query to a table of
      * text fragments.
-     * @see com.mycompany.model.Text Text
      * @param res - Result Set
      * @return Text object
      */

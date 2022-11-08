@@ -12,9 +12,21 @@ import java.util.logging.Logger;
  * @author Brenda
  */
 public abstract class DAO {  
+    /**
+     * private atribute
+     */
     private static Connection connection = null;
+    /**
+     * private atribute
+     */
     private static String url;
+    /**
+     * protected atributes
+     */
     protected static String user;
+    /**
+     * protected atributes
+     */
     protected static String password;
    
     /**

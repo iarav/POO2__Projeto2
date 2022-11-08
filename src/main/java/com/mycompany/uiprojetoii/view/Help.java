@@ -7,7 +7,7 @@ package com.mycompany.uiprojetoii.view;
 import com.mycompany.uiprojetoii.control.Controller;
 
 /**
- *
+ * Frame Help
  * @author Heloise
  */
 public class Help extends javax.swing.JFrame {

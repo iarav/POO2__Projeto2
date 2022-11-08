@@ -6,6 +6,7 @@
 package com.mycompany.uiprojetoii.model;
 
 /**
+ * Factory DAO
  * @author Brenda
  * @author Yuri
  */
@@ -24,6 +25,11 @@ public class FactoryDAO {
             return new TextDAO(user, pass);
     }
     
+    /**
+     * Gets the DAO
+     * @param isLocal boolean that determines if the database is local or from the server
+     * @return DAD
+     */
     public static DAO getDAO(Boolean isLocal) {
         if(isLocal)
             return new LocalConnDAO();

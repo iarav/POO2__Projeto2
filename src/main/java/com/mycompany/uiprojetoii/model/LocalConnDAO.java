@@ -23,6 +23,9 @@ public class LocalConnDAO extends DAO {
         setConnection();
     }
     
+    /**
+     * Empty constructor
+     */
     public LocalConnDAO() {
     }
    
